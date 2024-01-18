@@ -1,0 +1,23 @@
+@import "normalize.css";
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  background-image: linear-gradient(-45deg, #211F20, #5B483A);
+}
+
+.header__navigation {
+  display: flex;
+}
+
+.navigation {
+  display: flex;
+}
+
+.header__content {
+  display: flex;
+}
+
+/*# sourceMappingURL=style.css.map */
