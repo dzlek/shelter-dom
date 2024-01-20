@@ -356,3 +356,7 @@ section, main, footer, header, article {
 li{
   list-style-type: none;
 }
+
+h2, p, h3{
+  margin: 0;
+}
