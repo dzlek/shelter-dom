@@ -27,15 +27,14 @@
     line-height: 160%; /* 24px */  
 }
 
-h2{
-    color: #FFF;
-    font-family: Georgia;
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%; /* 57.2px */  
+.text{
+color: #B2B2B2;
+font-family: Arial;
+font-size: 12px;
+font-style: italic;
+font-weight: 400;
+line-height: 18px; /* 150% */
 }
-
 
 .button_primary{
     color: #292929;
@@ -45,6 +44,15 @@ h2{
     font-weight: 400;
     line-height: 130%; /* 22.1px */
     letter-spacing: 1.02px;
+}
+
+h2{
+    color: #FFF;
+    font-family: Georgia;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 57.2px */  
 }
 
 h3{

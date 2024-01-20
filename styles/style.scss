@@ -6,7 +6,7 @@ $desktop-width: 1280px;
 $tablet-width: 768px;
 $mobile-width: 320px;
 
-$bg-color-header: linear-gradient(-45deg,#211F20,#5B483A);
+$bg-color-header: url('/shelter-dom/images/noise_transparent@2x.svg'), radial-gradient((237.5% 111.8% at 0% 0%, #5B483A 0%, #262425 100%), #211F20);
 $bg-color-main: #F6F6F6;
 
 $button-primary-color: #F1CDB3;
@@ -17,23 +17,11 @@ $button-primary-color: #F1CDB3;
     margin: 0 auto;
 }
 
-// .footer{
-//     background-image: $bg-color-header;
-// }
-
-.header{
-    height: 908px;
+.header_bgcolor{
+    max-width: $desktop-width;
+    margin: 0 auto;
     background: $bg-color-header ;
-}
 
-.logo{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.main, .donation{
-    background-color: $bg-color-main;
 }
 
 .header__navigation{
@@ -42,18 +30,24 @@ $button-primary-color: #F1CDB3;
     padding: 60px 40px 0px 40px;
 }
 
+.logo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .navigation{
     display: flex;
     gap:35px;
 }
 
-.header__content{
+.menu{
     display: flex;
     padding: 60px 40px 0px 40px;
 
 }
 
-.header__text{
+.menu__text{
     display: flex;
     flex-direction: column;
     gap: 42px;
@@ -70,11 +64,15 @@ $button-primary-color: #F1CDB3;
     border: 0;
 }
 
+.main, .donation{
+    background-color: $bg-color-main;
+}
+
 .about{
-    // background-color: green;
-    height: 588px;
+    // height: 588px;
     display: flex;
     gap: 120px;
+    padding-bottom: 95px;
     
 }
 
@@ -97,7 +95,7 @@ $button-primary-color: #F1CDB3;
 .help {
     // background-color: magenta;
     height: 611px;
-    padding: 0px 60px 0px 50px;
+    padding: 0px 60px 0px 60px;
     text-align:center;
     & h3{padding-top: 80px;}
 }
@@ -118,12 +116,66 @@ $button-primary-color: #F1CDB3;
 
 .donation{
     // background-color: green;
-    height: 462px;
+    // height: 462px;
     display: flex;
-    padding: 80px 182px 0px 183px;
+    gap: 30px;
+    padding: 80px 182px 100px 183px;
 }
 
 .donation_image{
     height: 261px;
-    width: 505px;
+    padding-top: 10px;
+}
+.donation__content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.donation__credit-card{
+    background: $button-primary-color;
+    border-radius: 9px;
+    padding: 10px 15px;
+    & svg{
+    vertical-align: bottom;
+    }
+    &:hover{
+        color: $button-primary-color;
+        & path {fill: $button-primary-color;}
+        background: $bg-color-header;
+        cursor: pointer;
+    }
+}
+
+
+.footer{
+    background-image: $bg-color-header;
+    display: flex;
+    gap: 160px;
+    align-items: flex-start;
+    padding: 40px 40px 0px 40px;
+}
+
+.footer__contacts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 16px;
+    & svg{
+        vertical-align:middle;
+        }
+}
+
+ .footer__address{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 40px;
+    margin-top: 16px;
+    & svg{
+        vertical-align:middle;
+        }
+
 }
