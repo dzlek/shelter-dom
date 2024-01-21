@@ -14,17 +14,17 @@
     <!-- https://www.figma.com/file/IIAqoqASZ0qg8dFGnhH1ex/shelter-dom-(Copy)?type=design&node-id=94-43&mode=design&t=yO0LTWO1xeUoSExi-0 -->
     <div class="header_bgcolor">
         <header class="wrapper">
-            <div class="header__navigation">
-                <a href="#" class="logo">
+            <div class="navigation">
+                <a href="index.html" class="logo">
                     <div class="logo_title">Cozy House</div>
                     <div class="logo_subtitle">Shelter for pets in Boston</div>
                 </a>
                 <nav>
-                    <ul class="navigation paragraph-l">
-                        <li>About the shelter</li>
-                        <li>Our pets</li>
-                        <li>Help the shelter</li>
-                        <li>Contacts</li>
+                    <ul class="navigation__links paragraph-l">
+                        <li><a href="#about">About the shelter</a></li>
+                        <li><a href="#main">Our pets</a></li>
+                        <li><a href="#help">Help the shelter</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
                     </ul>
                 </nav>
             </div>
@@ -38,7 +38,7 @@
                         and
                         open
                         heart. He or she will love you more than anybody else in the world, you will see!</p>
-                    <button class="button_primary">Make a friend</button>
+                    <button class="button-primary button-primary_activated">Make a friend</button>
                 </div>
                 <img src="images\start-screen-puppy.png" alt="start-screen-puppy">
             </div>
@@ -46,69 +46,84 @@
     </section>
     </div>
 
-    <section class="about wrapper">
-        <div class="about__image"><img src="images/about-pets.png" alt="about-pets"></div>
-        <div class="about__content">
-            <h3>About the shelter<br> “Cozy House”</h3>
-            <p class="paragraph-l">Currently we have 121 dogs and 342 cats on our hands and statistics show
-                that only
-                20% of them will find
-                a family. The others will continue to live with us and will be waiting for a lucky chance to become
-                dearly loved.</p>
-            <p class="paragraph-l">We feed our wards with the best food and make sure that they do not get
-                sick, feel
-                comfortable (including
-                psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels.
-                About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become
-                attached to the pets and would hardly ever leave them alone.</p>
+    <section class="wrapper">
+        <div id="about" class="about">
+            <div class="about__image"><img src="images/about-pets.png" alt="about-pets"></div>
+            <div class="about__content">
+                <h3>About the shelter<br> “Cozy House”</h3>
+                <p class="paragraph-l">Currently we have 121 dogs and 342 cats on our hands and statistics show
+                    that only
+                    20% of them will find
+                    a family. The others will continue to live with us and will be waiting for a lucky chance to become
+                    dearly loved.</p>
+                <p class="paragraph-l">We feed our wards with the best food and make sure that they do not get
+                    sick, feel
+                    comfortable (including
+                    psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill
+                    levels.
+                    About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become
+                    attached to the pets and would hardly ever leave them alone.</p>
+            </div>
         </div>
     </section>
 
     <main class="wrapper">
-        <div class="main">
-            <h3 class="main__title">Our friends who
+        <div id="main" class="main">
+            <h3 class="main__title">Our friends who <br>
                 are looking for a house</h3>
-            <div class="main_carousel">
-                <button class="main__button"></button>
-                <div class="animal-item"></div>
-                <div class="animal-item"></div>
-                <div class="animal-item"></div>
-                <button class="main__button"></button>
+            <div class="main__carousel">
+                <button class="arrow-button"><img src="images/Arrow.svg" alt=""></button>
+                <div class="animal-item">
+                    <img src="images/pets/pets-katrine.png" alt="">
+                    <h4 class="animal-item__title">Katrine</h4>
+                    <button class="button-primary">Learn more</button>
+                </div>
+                <div class="animal-item">
+                    <img src="images/pets/pets-jennifer.png" alt="">
+                    <h4 class="animal-item__title">Jennifer</h4>
+                    <button class="button-primary">Learn more</button>
+                </div>
+                <div class="animal-item">
+                    <img src="images/pets/pets-woody.png" alt="">
+                    <h4 class="animal-item__title">Woody</h4>
+                    <button class="button-primary">Learn more</button>
+                </div>
+                <button class="arrow-button arrow-button_mirror"><img src="images/Arrow.svg" alt=""></button>
             </div>
-            <button class="button_primary">Get to know the rest</button>
+            <button class="button-primary button-primary_activated">Get to know the rest</button>
         </div>
     </main>
 
     <section class="wrapper">
-        <div class="help">
+        <div id="help" class="help">
             <h3>How you can help <br> our shelter</h3>
             <div class="help__grid">
-                <div class="help__item"><img src="images/icon-pet-food.svg" alt="">
-                    <h4>Pet food</h4>
+                <div class="help-item"><a href="https://www.google.com/search?q=Pet+food" target="_blank"><img src="images/icon-pet-food.svg" alt="">
+                    <h4>Pet food</h4></a>
                 </div>
-                <div class="help__item"><img src="images/icon-transportation.svg" alt="">
-                    <h4>Transportation</h4>
+                <div class="help-item"><a href="https://www.google.com/search?q=Pet+transportation" target="_blank"><img src="images/icon-transportation.svg" alt="">
+                    <h4>Transportation</h4></a>
                 </div>
-                <div class="help__item"><img src="images/icon-toys.svg" alt="">
-                    <h4>Toys</h4>
+                <div class="help-item"><a href="https://www.google.com/search?q=Pet+toys" target="_blank"><img src="images/icon-toys.svg" alt="">
+                    <h4>Toys</h4></a>
                 </div>
-                <div class="help__item"><img src="images/icon-bowls-and-cups.svg" alt="">
-                    <h4>Bowls and cups</h4>
+                <div class="help-item"><a href="https://www.google.com/search?q=Pet+bowls+cups" target="_blank"><img src="images/icon-bowls-and-cups.svg" alt="">
+                    <h4>Bowls and cups</h4></a>
                 </div>
-                <div class="help__item"><img src="images/icon-shampoos.svg" alt="">
-                    <h4>Shampoos</h4>
+                <div class="help-item"><a href="https://www.google.com/search?q=Pet+shampoos" target="_blank"><img src="images/icon-shampoos.svg" alt="">
+                    <h4>Shampoos</h4></a>
                 </div>
-                <div class="help__item"><img src="images/icon-vitamins.svg" alt="">
-                    <h4>Vitamins</h4>
+                <div class="help-item"><a href="https://www.google.com/search?q=Pet+vitamins" target="_blank"><img src="images/icon-vitamins.svg" alt="">
+                    <h4>Vitamins</h4></a>
                 </div>
-                <div class="help__item"><img src="images/icon-medicines.svg" alt="">
-                    <h4>Medicines</h4>
+                <div class="help-item"><a href="https://www.google.com/search?q=Pet+medicines" target="_blank"><img src="images/icon-medicines.svg" alt="">
+                    <h4>Medicines</h4></a>
                 </div>
-                <div class="help__item"><img src="images/icon-collars-leashes.svg" alt="">
-                    <h4>Collars / leashes</h4>
+                <div class="help-item"><a href="https://www.google.com/search?q=Pet+leashes" target="_blank"><img src="images/icon-collars-leashes.svg" alt="">
+                    <h4>Collars / leashes</h4></a>
                 </div>
-                <div class="help__item"><img src="images/icon-sleeping-area.svg" alt="">
-                    <h4>Sleeping areas</h4>
+                <div class="help-item"><a href="https://www.google.com/search?q=Pet+sleeping+areas" target="_blank"><img src="images/icon-sleeping-area.svg" alt="">
+                    <h4>Sleeping areas</h4></a>
                 </div>
 
             </div>
@@ -129,16 +144,14 @@
                     </svg>
                     &nbsp;8380 2880 8028 8791 7435</h4>
                 <p class="text">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-                    a ipsum at
-                    libero
-                    sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada
-                    fames ac ante ipsum primis in faucibus.</p>
+                    a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate.
+                    Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
             </div>
         </div>
     </section>
 
     <footer class="wrapper">
-        <div class="footer">
+        <div id="contacts" class="footer">
             <div class="footer__contacts">
                 <h3>For questions and suggestions</h3>
                 <a href="mailto:">
@@ -198,7 +211,7 @@
             <img src="images/footer-puppy.png" alt="">
         </div>
     </footer>
-
+<script src="scripts/script.js"></script>
 </body>
 
 </html>

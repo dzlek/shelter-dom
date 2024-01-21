@@ -8,9 +8,13 @@ $mobile-width: 320px;
 
 $bg-color-header: url('/shelter-dom/images/noise_transparent@2x.svg'), radial-gradient((237.5% 111.8% at 0% 0%, #5B483A 0%, #262425 100%), #211F20);
 $bg-color-main: #F6F6F6;
+$bg-color-light: #FAFAFA;
 
 $button-primary-color: #F1CDB3;
+$button-primary-color-light: #FDDCC4;
 
+$text-color-dark: #4C4C4C;
+$text-color-light: #FFFFFF;
 
 .wrapper{
     max-width: $desktop-width;
@@ -24,7 +28,7 @@ $button-primary-color: #F1CDB3;
 
 }
 
-.header__navigation{
+.navigation{
     display: flex;
     justify-content: space-between;
     padding: 60px 40px 0px 40px;
@@ -36,15 +40,23 @@ $button-primary-color: #F1CDB3;
     gap: 10px;
 }
 
-.navigation{
+.navigation__links{
     display: flex;
     gap:35px;
+    & a{
+        color: $bg-color-light;
+    }
+    & a:hover{
+        transition: 100ms;
+        padding-bottom: 5px;
+        border-bottom: 3px solid $button-primary-color;
+    }
 }
+
 
 .menu{
     display: flex;
     padding: 60px 40px 0px 40px;
-
 }
 
 .menu__text{
@@ -56,28 +68,39 @@ $button-primary-color: #F1CDB3;
     margin: 0px;
 }
 
-.button_primary{
+.button-primary{
     width:fit-content;
-    background-color: $button-primary-color;
     border-radius: 100px;
-    padding: 15px 45px;
-    border: 0;
-}
-
-.main, .donation{
-    background-color: $bg-color-main;
+    padding: 13px 43px;
+    border: 2px solid $button-primary-color;
+    cursor: pointer;
+    background-color: transparent;
+    &_activated{
+        background-color: $button-primary-color;
+    }
+    &:hover{
+        border: 2px solid $button-primary-color-light;
+        background-color: $button-primary-color-light;
+    }
 }
 
 .about{
-    // height: 588px;
     display: flex;
     gap: 120px;
     padding-bottom: 95px;
+    & p{
+        color: $text-color-dark;
+    }
     
 }
 
 .about__image{
     padding: 80px 0px 0px 215px;
+    transition: 500ms;
+    &:hover{
+        transition: 500ms;
+        scale: 1.05;
+    }
 }
 
 .about__content{
@@ -88,14 +111,56 @@ $button-primary-color: #F1CDB3;
 }
 
 .main{
-    height: 877px;
+
     background-color: $bg-color-main;
+    padding: 80px 40px 100px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
+.arrow-button{
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    border: 2px solid $button-primary-color; 
+    border-radius: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    &_mirror{
+        transform: rotate(180deg);
+    }
+    &:hover{
+        border: 2px solid $button-primary-color-light;
+        background-color: $button-primary-color-light;
+    }
+
+}
+.main__carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 90px;
+
+}
+.animal-item{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center; 
+    padding-bottom: 30px;
+    background-color: $bg-color-light;
+}
+
+
+
 .help {
-    // background-color: magenta;
-    height: 611px;
-    padding: 0px 60px 0px 60px;
+    padding: 0px 60px 50px 60px;
     text-align:center;
     & h3{padding-top: 80px;}
 }
@@ -107,16 +172,21 @@ $button-primary-color: #F1CDB3;
     padding-top: 60px;
 }
 
-.help__item:nth-child(9n+1), .help__item:nth-child(9n+2), .help__item:nth-child(9n+3), .help__item:nth-child(9n+4), .help__item:nth-child(9n+5) {
+.help-item:nth-child(9n+1), .help-item:nth-child(9n+2), .help-item:nth-child(9n+3), .help-item:nth-child(9n+4), .help-item:nth-child(9n+5) {
     grid-column: auto / span 4;
   }
-.help__item:nth-child(9n+6), .help__item:nth-child(9n+7), .help__item:nth-child(9n+8), .help__item:nth-child(9n+9) {
+.help-item:nth-child(9n+6), .help-item:nth-child(9n+7), .help-item:nth-child(9n+8), .help-item:nth-child(9n+9) {
     grid-column: auto / span 5;
   }
 
+  .help-item{
+   & h4{
+    padding-top: 25px;
+    }
+}
+
 .donation{
-    // background-color: green;
-    // height: 462px;
+    background-color: $bg-color-main;
     display: flex;
     gap: 30px;
     padding: 80px 182px 100px 183px;
@@ -155,6 +225,13 @@ $button-primary-color: #F1CDB3;
     gap: 160px;
     align-items: flex-start;
     padding: 40px 40px 0px 40px;
+    & h3{
+        color: $text-color-light;
+    }
+    & h4{
+        color: $button-primary-color;
+    }
+
 }
 
 .footer__contacts{
@@ -166,6 +243,7 @@ $button-primary-color: #F1CDB3;
     & svg{
         vertical-align:middle;
         }
+    
 }
 
  .footer__address{
