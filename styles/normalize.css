@@ -357,6 +357,7 @@ li{
   list-style-type: none;
 }
 
-h2, p, h3{
+h2, p, h3, h4, h5, span{
   margin: 0;
 }
+
