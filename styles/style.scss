@@ -1,6 +1,6 @@
 
 @import 'normalize.css';
-@import 'typography.css';
+// @import 'typography.css';
 
 $desktop-width: 1280px;
 $tablet-width: 760px;
@@ -15,6 +15,48 @@ $button-primary-color-light: #FDDCC4;
 
 $text-color-dark: #4C4C4C;
 $text-color-light: #FFFFFF;
+
+html{font-size: 10px;}
+// html::-webkit-scrollbar {
+//     width: 0;
+//   }
+
+@mixin font($color, $size, $weight, $height, $spacing, $family: Georgia, $style:normal) {
+    color: $color;
+    font-family: $family;
+    font-size: $size;
+    font-style: $style;
+    font-weight: $weight;
+    line-height: $height; 
+    letter-spacing: $spacing;
+    }
+
+
+.logo_subtitle {@include font( #FFFFFF, 1.3rem, 400, 110%, 1.3px, Arial);}
+.paragraph-l {@include font( #FAFAFA, 1.5rem, 400, 160%, normal, Arial);}
+.donation_card-text {@include font( #B2B2B2, 1.2rem, 400, 1.8rem, normal, Arial, italic);}
+.button-primary {@include font(#292929, 1.7rem, 400, 130%, 1.02px);}
+
+h1 {@include font(#F1CDB3, 3.2rem, 400, 110%, 1.92px);}
+h2 {@include font(#FFFFFF, 4.4rem, 400, 130%, normal);}
+h3 {@include font(#545454, 3.5rem, 400, 130%, 2.1px);}
+h4 {
+    text-align: center; 
+    @include font(#545454, 2.0rem, 400, 115%, 1.2px);}
+h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
+
+@media ($mobile-width <= width < $tablet-width) {
+    h2 {@include font(#FFFFFF, 2.5rem, 400, 130%, 1.5px);}
+    h3 {@include font(#545454, 2.5rem, 400, 130%, 1.5px);}
+    h4 {
+        text-align: center; 
+        @include font(#545454, 2.0rem, 400, normal, 1.2px);}
+    h5 {@include font(#545454, 1.5rem, 400, 160%, normal);}
+}
+
+
+
+
 
 .wrapper{
     max-width: $desktop-width;
@@ -35,6 +77,9 @@ $text-color-light: #FFFFFF;
     @media ( $tablet-width <= width <= $desktop-width){
         padding: 30px 30px 0px 30px;
     }
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 30px 10px 0px 10px;
+    }
 }
 
 .logo{
@@ -54,6 +99,9 @@ $text-color-light: #FFFFFF;
         padding-bottom: 5px;
         border-bottom: 3px solid $button-primary-color;
     }
+    @media ($mobile-width <= width < $tablet-width) {
+        display: none;
+    }
 }
 
 
@@ -64,36 +112,47 @@ $text-color-light: #FFFFFF;
         flex-direction: column;
         padding: 30px 30px 0px 30px;
     }  
+    @media ($mobile-width <= width < $tablet-width) {
+        flex-direction: column;
+        padding: 10px 10px 0px 10px;
+    }
     }
 
 .menu__text{
     display: flex;
     flex-direction: column;
     gap: 42px;
-    padding-top: 163px;
-    padding-right: 42px;
+    padding: 163px 42px 0px 0px;
     margin: 0px;
     @media ( $tablet-width <= width <= $desktop-width){
-        padding-top: 30px;
-        align-items: left;
-        padding: 30px 18%;
-    }
+        padding: 30px 125px 0px 124px;
+        text-align: left;
+        & button{margin: 0 auto;}
+
+    }        
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 50px 0px 0px 0px;
+        text-align: center;
+        & button{margin: 0 auto;}
+    }                   
 }
 
 @media ( $tablet-width <= width <= $desktop-width){
 .menu img{
-    padding-top: 70px;
-    padding-left: 20%;
-    padding-right: 0%;
- 
-
+    padding: 100px 0px 0px 140px;
 }
+}
+@media ($mobile-width <= width < $tablet-width) {
+    .menu img{
+        padding: 106px 0px 0px 40px;
+    }
 }
 
 .button-primary{
+    display: block;
     width:fit-content;
     border-radius: 100px;
-    padding: 13px 43px;
+    padding: 12px 42px;
     border: 2px solid $button-primary-color;
     cursor: pointer;
     background-color: transparent;
@@ -136,6 +195,11 @@ $text-color-light: #FFFFFF;
         flex-direction: column-reverse;
         gap: 80px;
     }
+    @media ($mobile-width <= width < $tablet-width) {
+        flex-direction: column-reverse;
+        gap: 42px;
+        padding-bottom: 35px;
+    }
     
 }
 
@@ -149,6 +213,16 @@ $text-color-light: #FFFFFF;
     @media ( $tablet-width <= width <= $desktop-width){
         padding: 00px 0px 0px 225px;
     }
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 00px 30px 0px 30px;
+        &:hover{
+            scale: unset;
+        }
+        & img{
+            width: 260px;
+
+        }
+    }
 }
 
 .about__content{
@@ -158,6 +232,10 @@ $text-color-light: #FFFFFF;
     padding: 94px 215px 0px 0px;
     @media ( $tablet-width <= width <= $desktop-width){
         padding: 83px 170px 0px 168px;
+    }
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 43px 25px 0px 25px;
+        text-align: justify;
     }
 }
 
@@ -169,6 +247,17 @@ $text-color-light: #FFFFFF;
     gap: 60px;
     justify-content: center;
     align-items:center;
+
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 40px 10px 100px 10px;
+        text-align: center;
+    }
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 40px 10px 40px 10px;
+        gap: 42px;
+    }
+
+
 }
 
 .main__carousel{
@@ -181,10 +270,34 @@ $text-color-light: #FFFFFF;
         & .animal-item:last-of-type {
             display: none;
         }
+    }
+
+    @media ($mobile-width <= width < $tablet-width) {
+        & .animal-item {
+        display: none;
+        }
+        & .animal-item:first-of-type {
+            display:flex;
+            width: 100%;
+        }
+        .arrow-button:first-of-type{
+            order: 1;
+            margin-top: 25px;
+            margin-left: 20%;
+            // margin-right: auto;
+        }
+        .arrow-button:last-of-type{
+            order: 1;
+            margin-top: 25px;
+            // margin-left: auto;
+            margin-right: 20%;
+        }
+        flex-wrap:wrap;
+        flex-direction: row;
 
     }
     
-    // gap: 90px;
+
 }
 
 .animal-item{
@@ -203,6 +316,11 @@ $text-color-light: #FFFFFF;
     padding: 0px 60px 50px 60px;
     text-align:center;
     & h3{padding-top: 80px;}
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 0px 10px 20px 10px;
+        & h3{padding-top: 45px;}
+    }
+
 }
 
 .help__grid{
@@ -213,6 +331,11 @@ $text-color-light: #FFFFFF;
     @media ( $tablet-width <= width <= $desktop-width){
         grid-template-columns: repeat(9, 1fr);
     }
+    @media ($mobile-width <= width < $tablet-width) {
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 40px;
+        grid-auto-rows: 115px;
+    }
 }
 
 .help-item:nth-child(9n+1), .help-item:nth-child(9n+2), .help-item:nth-child(9n+3), .help-item:nth-child(9n+4), .help-item:nth-child(9n+5) {
@@ -220,11 +343,17 @@ $text-color-light: #FFFFFF;
     @media ( $tablet-width <= width <= $desktop-width){
         grid-column: auto / span 3;
     }
+    @media ($mobile-width <= width < $tablet-width) {
+        grid-column: auto / span 1;
+    }
   }
 .help-item:nth-child(9n+6), .help-item:nth-child(9n+7), .help-item:nth-child(9n+8), .help-item:nth-child(9n+9) {
     grid-column: auto / span 5;
     @media ( $tablet-width <= width <= $desktop-width){
         grid-column: auto / span 3;
+    }
+    @media ($mobile-width <= width < $tablet-width) {
+        grid-column: auto / span 1;
     }
   }
 
@@ -232,8 +361,13 @@ $text-color-light: #FFFFFF;
    & h4{
     padding-top: 25px;
     }
+    @media ($mobile-width <= width < $tablet-width) {
+        & h4{
+            padding-top: 10px;
+            font-size: 1.5rem;
+        }
 }
-
+  }
 .donation{
     background-color: $bg-color-main;
     display: flex;
@@ -244,6 +378,14 @@ $text-color-light: #FFFFFF;
         padding: 80px 132px 100px 25%;
         gap: 0px;
     }
+    @media ($mobile-width <= width < $tablet-width) {
+        flex-direction: column-reverse;
+        padding: 45px 10px 45px 10px;
+        gap: 0px;
+        & .donation__credit-card{
+            font-size: 1.5rem;
+        }
+    }
 }
 
 .donation_image{
@@ -253,12 +395,20 @@ $text-color-light: #FFFFFF;
     @media ( $tablet-width <= width <= $desktop-width){
         padding-top: 60px;
     }
+    @media ($mobile-width <= width < $tablet-width) {
+        padding-top: 20px;
+
+    }
 }
 .donation__content{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+    @media ($mobile-width <= width < $tablet-width) {
+      align-items: center;  
+      text-align: center;
+    }
 }
 
 .donation__credit-card{
@@ -294,14 +444,24 @@ $text-color-light: #FFFFFF;
         align-items: center;
         gap: 50px;
     }
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 10px 30px 0px 30px;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
 }
 
 .footer__grid{
     display: flex;
+    @media ($mobile-width <= width < $tablet-width) {
+        flex-direction: column;
+    }
 
 }
 
 .footer__contacts{
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -310,10 +470,14 @@ $text-color-light: #FFFFFF;
     & svg{
         vertical-align:middle;
         }
+    @media ($mobile-width <= width < $tablet-width) {
+        width: 100%;
+    }
     
 }
 
  .footer__address{
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items:flex-start;
@@ -325,6 +489,9 @@ $text-color-light: #FFFFFF;
     & a{
         display: flex;
         gap: 20px;
+    }
+    @media ($mobile-width <= width < $tablet-width) {
+        width: 100%;
     }
 
 }
