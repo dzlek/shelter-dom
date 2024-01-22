@@ -72,6 +72,7 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
 }
 
 .navigation{
+
     display: flex;
     justify-content: space-between;
     padding: 60px 40px 0px 40px;
@@ -148,7 +149,7 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
     visibility: hidden;
     display: flex;
     align-items: center;
-    position: fixed;
+    position: absolute;
     top: 45px;
     right: 53px;
   

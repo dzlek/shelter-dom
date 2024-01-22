@@ -228,7 +228,7 @@ h5 {
   visibility: hidden;
   display: flex;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 45px;
   right: 53px;
   width: 30px;
