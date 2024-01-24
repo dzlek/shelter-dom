@@ -33,7 +33,7 @@
                                 <div class="logo__subtitle">Shelter for pets in Boston</div>
                             </a></li>
                         <li><a href="#about">About the shelter</a></li>
-                        <li><a href="#main">Our pets</a></li>
+                        <li><a href="our_pets.html">Our pets</a></li>
                         <li><a href="#help">Help the shelter</a></li>
                         <li><a href="#contacts">Contacts</a></li>
                     </ul>
@@ -85,54 +85,54 @@
                 are looking for a house</h3>
             <div class="main__carousel">
 
-                <button class="arrow-button"><img src="images/Arrow.svg" alt=""></button>
+                <button class="arrow-button" onclick="plusSlides(-1)"><img src="images/Arrow.svg" alt=""></button>
 
-<div class="animal-item__slider-track">
-
+                <!-- <div class="animal-item__slider-track">-->
                 <div class="animal-item__slider">
                     <div class="animal-item animal-item_wrapper">
                         <img src="images/pets/pets-katrine.png" alt="">
                         <h4 class="animal-item__title">Katrine</h4>
-                        <button class="button-primary">Learn more</button>
+                        <button class="button-primary" onclick="openModal('Katrine')">Learn more</button>
                     </div>
                     <div class="animal-item animal-item_wrapper">
                         <img src="images/pets/pets-jennifer.png" alt="">
                         <h4 class="animal-item__title">Jennifer</h4>
-                        <button class="button-primary">Learn more</button>
+                        <button class="button-primary" onclick="openModal('Jennifer')">Learn more</button>
                     </div>
                     <div class="animal-item animal-item_wrapper">
                         <img src="images/pets/pets-woody.png" alt="">
                         <h4 class="animal-item__title">Woody</h4>
-                        <button class="button-primary">Learn more</button>
+                        <button class="button-primary" onclick="openModal('Woody')">Learn more</button>
                     </div>
                     <div class="animal-item animal-item_wrapper">
                         <img src="images/pets/pets-sophia.png" alt="">
                         <h4 class="animal-item__title">Sophia</h4>
-                        <button class="button-primary">Learn more</button>
+                        <button class="button-primary" onclick="openModal('Sophia')">Learn more</button>
                     </div>
                     <div class="animal-item animal-item_wrapper">
                         <img src="images/pets/pets-timmy.png" alt="">
                         <h4 class="animal-item__title">Timmy</h4>
-                        <button class="button-primary">Learn more</button>
+                        <button class="button-primary" onclick="openModal('Timmy')">Learn more</button>
                     </div>
                     <div class="animal-item animal-item_wrapper">
                         <img src="images/pets/pets-charly.png" alt="">
                         <h4 class="animal-item__title">Charly</h4>
-                        <button class="button-primary">Learn more</button>
+                        <button class="button-primary" onclick="openModal('Charly')">Learn more</button>
                     </div>
                     <div class="animal-item animal-item_wrapper">
                         <img src="images/pets/pets-scarlet.png" alt="">
                         <h4 class="animal-item__title">Scarlett</h4>
-                        <button class="button-primary">Learn more</button>
+                        <button class="button-primary" onclick="openModal('Scarlett')">Learn more</button>
                     </div>
                     <div class="animal-item animal-item_wrapper">
                         <img src="images/pets/pets-Freddie.png" alt="">
                         <h4 class="animal-item__title">Freddie</h4>
-                        <button class="button-primary">Learn more</button>
+                        <button class="button-primary" onclick="openModal('Freddie')">Learn more</button>
                     </div>
                 </div>
-                </div>
-                <button class="arrow-button arrow-button_mirror"><img src="images/Arrow.svg" alt=""></button>
+                <!-- </div> -->
+                <button class="arrow-button arrow-button_mirror" onclick="plusSlides(1)"><img src="images/Arrow.svg"
+                        alt=""></button>
             </div>
             <a href="our_pets.html"><button class="button-primary button-primary_activated">Get to know the
                     rest</button></a>
@@ -282,10 +282,30 @@
         </div>
     </footer>
 
+    <!-- Modal -->
+    <div id="Modal" class="modal">
+        <div class="modal__content">
+            <button class="modal__close arrow-button" onclick="closeModal()">&times;</button>
+            <img id="modalImage" class="modal__image" src="images/pets/pets-jennifer.png" alt="">
+            <div class="modal__description">
+                <h3 id="modalName">Jennifer</h3>
+                <h4 id="modalType">Dog-Labrador</h4>
+                <h5 id="modalDescription">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This
+                    girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm
+                    in the house if she has all of her favorite toys.</h5>
+                <ul>
+                    <li><h5 id="modalAge"> Age: 2 months</h5></li>
+                    <li><h5 id="modalInoculations">Inoculations: none</h5></li>
+                    <li><h5  id="modalDiseases">Diseases: none</h5></li>
+                    <li><h5 id="modalParasites">Parasites: none</h5></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
 
-
-    <script src="scripts/script.js"></script>
+    <script src="scripts/slider.js"></script>
+    <script src="scripts/modal.js"></script>
 </body>
 
 </html>
