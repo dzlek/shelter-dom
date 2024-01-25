@@ -1,66 +1,14 @@
 
 @import 'normalize.css';
+@import 'variables.scss';
+@import 'fonts.scss';
 
+.logo__subtitle {@include font( $text-color-light, 1.3rem, 400, 110%, 1.3px, Arial);}
+.logo__title {@include font($text-primary-color, 3.2rem, 400, 110%, 1.92px);}
 
-$desktop-width: 1280px;
-$tablet-width: 760px;
-$mobile-width: 320px;
-
-$bg-color-header: url('/shelter-dom/images/noise_transparent@2x.svg'), radial-gradient((237.5% 111.8% at 0% 0%, #5B483A 0%, #262425 100%), #211F20);
-$bg-color-dark: #292929;
-$bg-color-main: #F6F6F6;
-$bg-color-light: #FAFAFA;
-
-$button-primary-color: #F1CDB3;
-$button-primary-color-light: #FDDCC4;
-
-$text-color-dark: #4C4C4C;
-$text-color-light: #FFFFFF;
-$text-color-dark-s: #CDCDCD;
-$text-color-dark-l: #545454;
-
-html{font-size: 10px;}
-
-// html::-webkit-scrollbar {
-//     width: 0;
-//   }
-
-@mixin font($color, $size, $weight, $height, $spacing, $family: Georgia, $style:normal) {
-    color: $color;
-    font-family: $family;
-    font-size: $size;
-    font-style: $style;
-    font-weight: $weight;
-    line-height: $height; 
-    letter-spacing: $spacing;
-    }
-
-
-.logo__subtitle {@include font( #FFFFFF, 1.3rem, 400, 110%, 1.3px, Arial);}
-
-.paragraph-l {@include font( #FAFAFA, 1.5rem, 400, 160%, normal, Arial);}
-.donation_card-text {@include font( #B2B2B2, 1.2rem, 400, 1.8rem, normal, Arial, italic);}
-.button-primary {@include font(#292929, 1.7rem, 400, 130%, 1.02px);}
-
-h1 {@include font(#F1CDB3, 3.2rem, 400, 110%, 1.92px);}
-h2 {@include font(#FFFFFF, 4.4rem, 400, 130%, normal);}
-h3 {@include font(#545454, 3.5rem, 400, 130%, 2.1px);}
-h4 {
-    text-align: center; 
-    @include font(#545454, 2.0rem, 400, 115%, 1.2px);}
-h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
-
-@media ($mobile-width <= width < $tablet-width) {
-    h2 {@include font(#FFFFFF, 2.5rem, 400, 130%, 1.5px);}
-    h3 {@include font(#545454, 2.5rem, 400, 130%, 1.5px);}
-    h4 {
-        text-align: center; 
-        @include font(#545454, 2.0rem, 400, normal, 1.2px);}
-    h5 {@include font(#545454, 1.5rem, 400, 160%, normal);}
-}
-
-
-
+@import 'buttons.scss';
+@import 'footer.scss';
+@import 'modal.scss';
 
 .wrapper{
     max-width: $desktop-width;
@@ -71,7 +19,6 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
     max-width: $desktop-width;
     margin: 0 auto;
     background: $bg-color-header;
-
 }
 
 .navigation{
@@ -93,22 +40,18 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
     gap: 10px;
 }
 
-
-
 #navigation__toggle:checked ~ .navigation__links {
     visibility: visible;
-    
   }
-  #navigation__toggle:checked ~ .navigation__btn > span {
+
+#navigation__toggle:checked ~ .navigation__btn > span {
     transform: rotate(90deg);
     transition: 300ms;
-  }
+}
 
 .navigation__links>li:first-child {
     display: none;
 }
-
-
 
 .navigation__links{
     display: flex;
@@ -128,7 +71,6 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
             display:block;
             text-align:left;
             padding-left: 20px;
-  
         }
         visibility: hidden;
         flex-direction: column;
@@ -147,11 +89,9 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
     }
 }
 
-
 // выключить отображение чекбокса
 #navigation__toggle {
     opacity: 0;
-    
   }
 
 // оформление кнопки
@@ -174,11 +114,10 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
     }
   }
 
-
 //серединка кнопки
-  .navigation__btn > span,
-  .navigation__btn > span::before,
-  .navigation__btn > span::after {
+.navigation__btn > span,
+.navigation__btn > span::before,
+.navigation__btn > span::after {
     display: block;
     position: absolute;
     
@@ -190,18 +129,16 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
   }
 
 // здесь выше кнопки
-    .navigation__btn > span::before {
+.navigation__btn > span::before {
     content: '';
     top: -10px;
   }
 
 // здесь ниже кнопки
-    .navigation__btn > span::after {
+.navigation__btn > span::after {
     content: '';
     top: 10px;
   }
-
-
 
 .menu{
     display: flex;
@@ -225,63 +162,25 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
     @media ( $tablet-width <= width <= $desktop-width){
         padding: 30px 125px 0px 124px;
         text-align: left;
-        & button{margin: 0 auto;}
+        & span{margin: 0 auto;}
 
     }        
     @media ($mobile-width <= width < $tablet-width) {
         padding: 50px 0px 0px 0px;
         text-align: center;
-        & button{margin: 0 auto;}
+        & span{margin: 0 auto;}
     }                   
 }
 
 @media ( $tablet-width <= width <= $desktop-width){
-.menu img{
-    padding: 100px 0px 0px 140px;
+    .menu img{
+        padding: 100px 0px 0px 140px;
 }
 }
 @media ($mobile-width <= width < $tablet-width) {
     .menu img{
         padding: 106px 0px 0px 40px;
     }
-}
-
-.button-primary{
-    display: block;
-    width:fit-content;
-    border-radius: 100px;
-    padding: 12px 42px;
-    border: 2px solid $button-primary-color;
-    cursor: pointer;
-    background-color: transparent;
-    &_activated{
-        background-color: $button-primary-color;
-    }
-    &:hover{
-        border: 2px solid $button-primary-color-light;
-        background-color: $button-primary-color-light;
-    }
-}
-
-.arrow-button{
-    width: 52px;
-    height: 52px;
-    cursor: pointer;
-    border: 2px solid $button-primary-color; 
-    border-radius: 26px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    cursor: pointer;
-
-    &_mirror{
-        transform: rotate(180deg);
-    }
-    &:hover{
-        border: 2px solid $button-primary-color-light;
-        background-color: $button-primary-color-light;
-    }
-
 }
 
 .about{
@@ -423,8 +322,6 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
 
 }
 
-
-
 .help {
     padding: 0px 60px 50px 60px;
     text-align:center;
@@ -470,8 +367,8 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
     }
   }
 
-  .help-item{
-   & h4{
+.help-item{
+    & h4{
     padding-top: 25px;
     }
     @media ($mobile-width <= width < $tablet-width) {
@@ -479,8 +376,9 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
             padding-top: 10px;
             font-size: 1.5rem;
         }
+    }
 }
-  }
+
 .donation{
     background-color: $bg-color-main;
     display: flex;
@@ -540,148 +438,16 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
 }
 
 
-.footer{
-    background-image: $bg-color-header;
-    display: flex;
-    align-items: flex-start;
-    padding: 40px 40px 0px 40px;
-    & h3{
-        color: $text-color-light;
-    }
-    & h4{
-        color: $button-primary-color;
-    }
-
-    @media ( $tablet-width <= width <= $desktop-width){
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-    @media ($mobile-width <= width < $tablet-width) {
-        padding: 10px 30px 0px 30px;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-}
-
-.footer__grid{
-    display: flex;
-    @media ($mobile-width <= width < $tablet-width) {
-        flex-direction: column;
-    }
-
-}
-
-.footer__contacts{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
-    margin-top: 16px;
-    & svg{
-        vertical-align:middle;
-        }
-    @media ($mobile-width <= width < $tablet-width) {
-        width: 100%;
-    }
-    
-}
-
- .footer__address{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    gap: 40px;
-    margin-top: 16px;
-    & svg{
-        vertical-align:middle;
-        }
-    & a{
-        display: flex;
-        gap: 20px;
-    }
-    @media ($mobile-width <= width < $tablet-width) {
-        width: 100%;
-    }
-
-}
-
-
-@media (width < $mobile-width) {
-    *{
-display: none;
-    }
-}
-
-
-/* Styles for modal */
-.modal {
+.warning{
     display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
 }
-
-
-.modal__content {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    // color: black;
-    background-color: $text-color-light;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 9px;
-    width: 900px;
-    height: 500px;
-    @media ( $tablet-width <= width <= $desktop-width){
-        width: 630px;
-        height: 500px;
-        & .modal__image{
-            width: 350px;
-            height: 350px;
-        }
-
+@media (width < $mobile-width) {
+    .wrapper{
+        display: none;
     }
-    @media ($mobile-width <= width < $tablet-width) {
-        & .modal__image{
-            display: none;
-        }
-        margin: 20% auto;
-        padding: 0px;
-        width: 240px;
-        height: auto;
+    .warning{
+        display: inline;
     }
+
 }
-
-.modal__close {
-    color: $bg-color-dark;
-    font-size: 28px;
-    font-weight: bold;
-    position:absolute;
-    top: -55px;
-    right: -30px;
-    &:hover{
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-}
-
-.modal__description {
-    padding: 50px 20px 0 29px;
-    & h4{
-        text-align: left;
-        margin: 20px auto;
-    }
-}
-
 

@@ -1,0 +1,72 @@
+@import 'variables.scss';
+
+.footer{
+    background-image: $bg-color-header;
+    display: flex;
+    align-items: flex-start;
+    padding: 40px 40px 0px 40px;
+    & h3{
+        color: $text-color-light;
+    }
+    & h4{
+        color: $button-primary-color;
+    }
+
+    @media ( $tablet-width <= width <= $desktop-width){
+
+        padding: 15px 64px 0px 64px;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+    }
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 10px 20px 0px 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+}
+
+.footer__grid{
+    display: flex;
+    gap: 50px;
+    @media ($mobile-width <= width < $tablet-width) {
+        flex-direction: column;
+    }
+
+}
+
+.footer__contacts{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 16px;
+    & svg{
+        vertical-align:middle;
+        }
+    @media ($mobile-width <= width < $tablet-width) {
+        width: 100%;
+    }
+    
+}
+
+.footer__address{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 40px;
+    margin-top: 16px;
+    & svg{
+        vertical-align:middle;
+        }
+    & a{
+        display: flex;
+        gap: 20px;
+    }
+    @media ($mobile-width <= width < $tablet-width) {
+        width: 100%;
+    }
+}
