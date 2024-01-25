@@ -1,0 +1,33 @@
+@import 'variables.scss';
+
+
+html{font-size: 10px;}
+
+@mixin font($color, $size, $weight, $height, $spacing, $family: Georgia, $style:normal) {
+    color: $color;
+    font-family: $family;
+    font-size: $size;
+    font-style: $style;
+    font-weight: $weight;
+    line-height: $height; 
+    letter-spacing: $spacing;
+    }
+
+.button-primary {@include font($button-primary-color-dark, 1.7rem, 400, 130%, 1.02px);}
+.donation_card-text {@include font( $text-donation_card-color, 1.2rem, 400, 1.8rem, normal, Arial, italic);}
+.paragraph-l {@include font( $text-paragraph-l-color, 1.5rem, 400, 160%, normal, Arial);}
+h2 {@include font($text-color-light, 4.4rem, 400, 130%, normal);}
+h3 {@include font($text-color-dark-l, 3.5rem, 400, 130%, 2.1px);}
+h4 {
+    text-align: center; 
+    @include font($text-color-dark-l, 2.0rem, 400, 115%, 1.2px);}
+h5 {@include font($text-color-dark-l, 1.5rem, 400, 110%, 0.9px);}
+
+@media ($mobile-width <= width < $tablet-width) {
+    h2 {@include font($text-color-light, 2.5rem, 400, 130%, 1.5px);}
+    h3 {@include font($text-color-dark-l, 2.5rem, 400, 130%, 1.5px);}
+    h4 {
+        text-align: center; 
+        @include font($text-color-dark-l, 2.0rem, 400, normal, 1.2px);}
+    h5 {@include font($text-color-dark-l, 1.5rem, 400, 160%, normal);}
+}

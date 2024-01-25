@@ -1,77 +1,20 @@
 @import 'normalize.css';
-
-$desktop-width: 1280px;
-$tablet-width: 760px;
-$mobile-width: 320px;
-
-$bg-color-header: url('/shelter-dom/images/noise_transparent@2x.svg'), radial-gradient((237.5% 111.8% at 0% 0%, #5B483A 0%, #262425 100%), #211F20);
-$bg-color-dark: #292929;
-$bg-color-main: #F6F6F6;
-$bg-color-light: #FAFAFA;
-
-$button-primary-color: #F1CDB3;
-$button-primary-color-light: #FDDCC4;
-
-$text-color-dark: #4C4C4C;
-$text-color-light: #FFFFFF;
-$text-color-dark-s: #545454;
-$text-color-dark-l: #545454;
-
-html{font-size: 10px;}
-
-// html::-webkit-scrollbar {
-//     width: 0;
-//   }
-
-@mixin font($color, $size, $weight, $height, $spacing, $family: (Georgia, 'Times New Roman', Times, serif), $style:normal) {
-    color: $color;
-    font-family: $family;
-    font-size: $size;
-    font-style: $style;
-    font-weight: $weight;
-    line-height: $height; 
-    letter-spacing: $spacing;
-    }
-
+@import 'variables.scss';
+@import 'fonts.scss';
 
 .logo__subtitle {@include font( #292929, 1.3rem, 400, 110%, 1.3px, Arial);}
-
-.paragraph-l {@include font( #FAFAFA, 1.5rem, 400, 160%, normal, Arial);}
-.donation_card-text {@include font( #B2B2B2, 1.2rem, 400, 1.8rem, normal, Arial, italic);}
-.button-primary {@include font(#292929, 1.7rem, 400, 130%, 1.02px);}
-
 h1 {@include font(#545454, 3.2rem, 400, 110%, 1.92px);}
-h2 {@include font(#FFFFFF, 4.4rem, 400, 130%, normal);}
-h3 {@include font(#545454, 3.5rem, 400, 130%, 2.1px);}
-h4 {
-    text-align: center; 
-    @include font(#545454, 2.0rem, 400, 115%, 1.2px);}
-h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
 
-@media ($mobile-width <= width < $tablet-width) {
-    h2 {@include font(#FFFFFF, 2.5rem, 400, 130%, 1.5px);}
-    h3 {@include font(#545454, 2.5rem, 400, 130%, 1.5px);}
-    h4 {
-        text-align: center; 
-        @include font(#545454, 2.0rem, 400, normal, 1.2px);}
-    h5 {@include font(#545454, 1.5rem, 400, 160%, normal);}
-}
-
+@import 'buttons.scss';
+@import 'footer.scss';
+@import 'modal.scss';
 
 .wrapper{
     max-width: $desktop-width;
     margin: 0 auto;
 }
 
-// .header_bgcolor{
-//     max-width: $desktop-width;
-//     margin: 0 auto;
-//     background: $bg-color-header;
-
-// }
-
 .navigation{
-
     display: flex;
     justify-content: space-between;
     padding: 30px 40px 20px 40px;
@@ -90,29 +33,25 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
     gap: 10px;
 }
 
-
 #navigation__toggle:checked ~ .navigation__links {
     visibility: visible;
-    
   }
-  #navigation__toggle:checked ~ .navigation__btn > span {
-    transform: rotate(90deg);
-    transition: 300ms;
-  }
+
+#navigation__toggle:checked ~ .navigation__btn > span {
+transform: rotate(90deg);
+transition: 300ms;
+}
 
 .navigation__links>li:first-child {
     display: none;
 }
-
-
-
 
 .navigation__links{
     display: flex;
     visibility: visible;
     gap:35px;
     & a{
-        color: $text-color-dark-s;
+        color: $text-color-dark-l;
     }
 
     & a:hover{
@@ -125,7 +64,6 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
             display:block;
             text-align:left;
             padding-left: 20px;
-  
         }
         visibility: hidden;
         flex-direction: column;
@@ -144,12 +82,9 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
     }
 }
 
-
-
-// // выключить отображение чекбокса
+// выключить отображение чекбокса
 #navigation__toggle {
     opacity: 0;
-    
   }
 
 // оформление кнопки
@@ -171,7 +106,6 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
         visibility: visible;
     }
   }
-
 
 //серединка кнопки
   .navigation__btn > span,
@@ -198,44 +132,6 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
     content: '';
     top: 10px;
   }
-
-
-
-.button-primary{
-    display: block;
-    width:fit-content;
-    border-radius: 100px;
-    padding: 12px 42px;
-    border: 2px solid $button-primary-color;
-    cursor: pointer;
-    background-color: transparent;
-    &_activated{
-        background-color: $button-primary-color;
-    }
-    &:hover{
-        border: 2px solid $button-primary-color-light;
-        background-color: $button-primary-color-light;
-    }
-}
-
-.arrow-button{
-    width: 52px;
-    height: 52px;
-    cursor: pointer;
-    border: 2px solid $button-primary-color; 
-    border-radius: 26px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    &_mirror{
-        transform: rotate(180deg);
-    }
-    &:hover{
-        border: 2px solid $button-primary-color-light;
-        background-color: $button-primary-color-light;
-    }
-
-}
 
 .main{
     background-color: $bg-color-main;
@@ -304,149 +200,9 @@ h5 {@include font(#545454, 1.5rem, 400, 110%, 0.9px);}
 }
 
 
-
-.footer{
-    background-image: $bg-color-header;
-    display: flex;
-    align-items: flex-start;
-    padding: 40px 40px 0px 40px;
-    & h3{
-        color: $text-color-light;
-    }
-    & h4{
-        color: $button-primary-color;
-    }
-
-    @media ( $tablet-width <= width <= $desktop-width){
-
-        padding: 15px 64px 0px 64px;
-        flex-direction: column;
-        align-items: center;
-        gap: 60px;
-    }
-    @media ($mobile-width <= width < $tablet-width) {
-        padding: 10px 20px 0px 20px;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-}
-
-.footer__grid{
-    display: flex;
-    gap: 50px;
-    @media ($mobile-width <= width < $tablet-width) {
-        flex-direction: column;
-    }
-
-}
-
-.footer__contacts{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
-    margin-top: 16px;
-    & svg{
-        vertical-align:middle;
-        }
-    @media ($mobile-width <= width < $tablet-width) {
-        width: 100%;
-    }
-    
-}
-
- .footer__address{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    gap: 40px;
-    margin-top: 16px;
-    & svg{
-        vertical-align:middle;
-        }
-    & a{
-        display: flex;
-        gap: 20px;
-    }
-    @media ($mobile-width <= width < $tablet-width) {
-        width: 100%;
-    }
-
-}
-
-
 @media (width < $mobile-width) {
     *{
 display: none;
     }
 }
 
-/* Styles for modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-
-.modal__content {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    // color: black;
-    background-color: $text-color-light;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 9px;
-    width: 900px;
-    height: 500px;
-    @media ( $tablet-width <= width <= $desktop-width){
-        width: 630px;
-        height: 500px;
-        & .modal__image{
-            width: 350px;
-            height: 350px;
-        }
-
-    }
-    @media ($mobile-width <= width < $tablet-width) {
-        & .modal__image{
-            display: none;
-        }
-        margin: 20% auto;
-        padding: 0px;
-        width: 240px;
-        height: auto;
-    }
-}
-
-.modal__close {
-    color: $bg-color-dark;
-    font-size: 28px;
-    font-weight: bold;
-    position:absolute;
-    top: -55px;
-    right: -30px;
-    &:hover{
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-}
-
-.modal__description {
-    padding: 50px 20px 0 29px;
-    & h4{
-        text-align: left;
-        margin: 20px auto;
-    }
-}

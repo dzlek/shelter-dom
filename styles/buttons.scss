@@ -1,0 +1,39 @@
+@import 'variables.scss';
+
+.button-primary{
+    display: block;
+    width:fit-content;
+    border-radius: 100px;
+    padding: 12px 42px;
+    border: 2px solid $button-primary-color;
+    cursor: pointer;
+    background-color: transparent;
+    &_activated{
+        background-color: $button-primary-color;
+    }
+    &:hover{
+        border: 2px solid $button-primary-color-light;
+        background-color: $button-primary-color-light;
+    }
+}
+
+.arrow-button{
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    border: 2px solid $button-primary-color; 
+    border-radius: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+
+    &_mirror{
+        transform: rotate(180deg);
+    }
+    &:hover{
+        border: 2px solid $button-primary-color-light;
+        background-color: $button-primary-color-light;
+    }
+
+}
