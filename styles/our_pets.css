@@ -123,7 +123,7 @@ h5 {
   letter-spacing: 1.3px;
 }
 
-h1 {
+.logo__title {
   color: #545454;
   font-family: Georgia;
   font-size: 3.2rem;
@@ -505,9 +505,16 @@ h1 {
   background-color: #FAFAFA;
 }
 
+.warning {
+  display: none;
+}
+
 @media (width < 320px) {
-  * {
+  .wrapper {
     display: none;
+  }
+  .warning {
+    display: inline;
   }
 }
 

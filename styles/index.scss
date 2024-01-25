@@ -4,7 +4,7 @@
 @import 'fonts.scss';
 
 .logo__subtitle {@include font( $text-color-light, 1.3rem, 400, 110%, 1.3px, Arial);}
-h1 {@include font($text-primary-color, 3.2rem, 400, 110%, 1.92px);}
+.logo__title {@include font($text-primary-color, 3.2rem, 400, 110%, 1.92px);}
 
 @import 'buttons.scss';
 @import 'footer.scss';
@@ -45,8 +45,8 @@ h1 {@include font($text-primary-color, 3.2rem, 400, 110%, 1.92px);}
   }
 
 #navigation__toggle:checked ~ .navigation__btn > span {
-transform: rotate(90deg);
-transition: 300ms;
+    transform: rotate(90deg);
+    transition: 300ms;
 }
 
 .navigation__links>li:first-child {
@@ -115,9 +115,9 @@ transition: 300ms;
   }
 
 //серединка кнопки
-  .navigation__btn > span,
-  .navigation__btn > span::before,
-  .navigation__btn > span::after {
+.navigation__btn > span,
+.navigation__btn > span::before,
+.navigation__btn > span::after {
     display: block;
     position: absolute;
     
@@ -129,13 +129,13 @@ transition: 300ms;
   }
 
 // здесь выше кнопки
-    .navigation__btn > span::before {
+.navigation__btn > span::before {
     content: '';
     top: -10px;
   }
 
 // здесь ниже кнопки
-    .navigation__btn > span::after {
+.navigation__btn > span::after {
     content: '';
     top: 10px;
   }
@@ -162,19 +162,19 @@ transition: 300ms;
     @media ( $tablet-width <= width <= $desktop-width){
         padding: 30px 125px 0px 124px;
         text-align: left;
-        & button{margin: 0 auto;}
+        & span{margin: 0 auto;}
 
     }        
     @media ($mobile-width <= width < $tablet-width) {
         padding: 50px 0px 0px 0px;
         text-align: center;
-        & button{margin: 0 auto;}
+        & span{margin: 0 auto;}
     }                   
 }
 
 @media ( $tablet-width <= width <= $desktop-width){
-.menu img{
-    padding: 100px 0px 0px 140px;
+    .menu img{
+        padding: 100px 0px 0px 140px;
 }
 }
 @media ($mobile-width <= width < $tablet-width) {
@@ -437,9 +437,17 @@ transition: 300ms;
     }
 }
 
+
+.warning{
+    display: none;
+}
 @media (width < $mobile-width) {
-    *{
-display: none;
+    .wrapper{
+        display: none;
     }
+    .warning{
+        display: inline;
+    }
+
 }
 

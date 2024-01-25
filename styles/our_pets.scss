@@ -3,7 +3,7 @@
 @import 'fonts.scss';
 
 .logo__subtitle {@include font( #292929, 1.3rem, 400, 110%, 1.3px, Arial);}
-h1 {@include font(#545454, 3.2rem, 400, 110%, 1.92px);}
+.logo__title {@include font(#545454, 3.2rem, 400, 110%, 1.92px);}
 
 @import 'buttons.scss';
 @import 'footer.scss';
@@ -38,8 +38,8 @@ h1 {@include font(#545454, 3.2rem, 400, 110%, 1.92px);}
   }
 
 #navigation__toggle:checked ~ .navigation__btn > span {
-transform: rotate(90deg);
-transition: 300ms;
+    transform: rotate(90deg);
+    transition: 300ms;
 }
 
 .navigation__links>li:first-child {
@@ -108,9 +108,9 @@ transition: 300ms;
   }
 
 //серединка кнопки
-  .navigation__btn > span,
-  .navigation__btn > span::before,
-  .navigation__btn > span::after {
+.navigation__btn > span,
+.navigation__btn > span::before,
+.navigation__btn > span::after {
     display: block;
     position: absolute;
     
@@ -122,13 +122,13 @@ transition: 300ms;
   }
 
 // здесь выше кнопки
-    .navigation__btn > span::before {
+.navigation__btn > span::before {
     content: '';
     top: -10px;
   }
 
 // здесь ниже кнопки
-    .navigation__btn > span::after {
+.navigation__btn > span::after {
     content: '';
     top: 10px;
   }
@@ -200,9 +200,16 @@ transition: 300ms;
 }
 
 
+.warning{
+    display: none;
+}
 @media (width < $mobile-width) {
-    *{
-display: none;
+    .wrapper{
+        display: none;
     }
+    .warning{
+        display: inline;
+    }
+
 }
 

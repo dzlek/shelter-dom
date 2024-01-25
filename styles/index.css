@@ -123,7 +123,7 @@ h5 {
   letter-spacing: 1.3px;
 }
 
-h1 {
+.logo__title {
   color: #F1CDB3;
   font-family: Georgia;
   font-size: 3.2rem;
@@ -473,7 +473,7 @@ h1 {
     padding: 30px 125px 0px 124px;
     text-align: left;
   }
-  .menu__text button {
+  .menu__text span {
     margin: 0 auto;
   }
 }
@@ -482,7 +482,7 @@ h1 {
     padding: 50px 0px 0px 0px;
     text-align: center;
   }
-  .menu__text button {
+  .menu__text span {
     margin: 0 auto;
   }
 }
@@ -787,9 +787,16 @@ h1 {
   fill: #F1CDB3;
 }
 
+.warning {
+  display: none;
+}
+
 @media (width < 320px) {
-  * {
+  .wrapper {
     display: none;
+  }
+  .warning {
+    display: inline;
   }
 }
 
