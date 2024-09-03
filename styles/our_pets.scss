@@ -1,0 +1,215 @@
+@import 'normalize.css';
+@import 'variables.scss';
+@import 'fonts.scss';
+
+.logo__subtitle {@include font( #292929, 1.3rem, 400, 110%, 1.3px, Arial);}
+.logo__title {@include font(#545454, 3.2rem, 400, 110%, 1.92px);}
+
+@import 'buttons.scss';
+@import 'footer.scss';
+@import 'modal.scss';
+
+.wrapper{
+    max-width: $desktop-width;
+    margin: 0 auto;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px 20px 40px;
+
+    @media ( $tablet-width <= width <= $desktop-width){
+        padding: 30px 30px 20px 30px;
+    }
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 30px 10px 30px 10px;
+    }
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#navigation__toggle:checked ~ .navigation__links {
+    visibility: visible;
+  }
+
+#navigation__toggle:checked ~ .navigation__btn > span {
+    transform: rotate(90deg);
+    transition: 300ms;
+}
+
+.navigation__links>li:first-child {
+    display: none;
+}
+
+.navigation__links{
+    display: flex;
+    visibility: visible;
+    gap:35px;
+    & a{
+        color: $text-color-dark-l;
+    }
+
+    & a:hover{
+        transition: 100ms;
+        padding-bottom: 5px;
+        border-bottom: 3px solid $button-primary-color;
+    }
+    @media ($mobile-width <= width < $tablet-width) {
+        &>li:first-child {
+            display:block;
+            text-align:left;
+            padding-left: 20px;
+        }
+        visibility: hidden;
+        flex-direction: column;
+        text-align: center;
+        position: absolute;
+        top: 0px;
+        right: 0;  //изменить на 0
+        width: 320px;
+        height: 100%;
+        margin: 0 ;
+        padding: 30px 0px 80px 10px;
+        background-color: $bg-color-main;
+        @include font(#FAFAFA, 3.2rem, 400, 160%, normal);
+
+
+    }
+}
+
+// выключить отображение чекбокса
+#navigation__toggle {
+    opacity: 0;
+  }
+
+// оформление кнопки
+.navigation__btn {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 45px;
+    right: 53px;
+  
+    width: 30px;
+    height: 30px;
+  
+    cursor: pointer;
+    z-index: 1;
+
+    @media ($mobile-width <= width < $tablet-width) {
+        visibility: visible;
+    }
+  }
+
+//серединка кнопки
+.navigation__btn > span,
+.navigation__btn > span::before,
+.navigation__btn > span::after {
+    display: block;
+    position: absolute;
+    
+    width: 100%;
+    height: 2px;
+    background-color: $bg-color-dark;
+
+    transition: 300ms;
+  }
+
+// здесь выше кнопки
+.navigation__btn > span::before {
+    content: '';
+    top: -10px;
+  }
+
+// здесь ниже кнопки
+.navigation__btn > span::after {
+    content: '';
+    top: 10px;
+  }
+
+.main{
+    background-color: $bg-color-main;
+    padding: 80px 40px 100px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+
+    @media ($tablet-width <= width < $desktop-width) {
+        padding: 80px 10px 90px 10px;
+        text-align: center;
+    }
+    @media ($mobile-width <= width < $tablet-width) {
+        padding: 40px 10px 40px 10px;
+        gap: 42px;
+    }
+}
+
+.main__carousel {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:center;
+    gap: 40px;
+    row-gap: 30px;
+    align-items:center; 
+    width: 100%;
+    @media ( $tablet-width <= width <= $desktop-width){
+        
+        & :nth-child(7), 
+        & :nth-child(6) {
+            display: none;
+        }
+    }
+
+    @media ($mobile-width <= width < $tablet-width) {
+        flex-direction: column;
+
+        & :nth-child(n+3):nth-child(n+4) {
+            display: none;
+        }
+    
+    }
+
+}
+
+.main_buttons{
+    display: flex;
+    gap: 20px;
+    @media ($mobile-width <= width < $tablet-width) {
+        gap: 10px;
+    }
+}
+
+.animal-item{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center; 
+    padding-bottom: 30px;
+    background-color: $bg-color-light;
+}
+
+
+.warning{
+    display: none;
+}
+@media (width < $mobile-width) {
+    .wrapper{
+        display: none;
+    }
+    .warning{
+        display: inline;
+    }
+
+}
+
